@@ -25,13 +25,17 @@ const EmojiCard = ({ fileName }: EmojiCardProps) => {
       />
       <div className="p-4">
         <p className="text-center text-s font-bold">{emojiName}</p>
-        <label>Use in GitHub markdown:</label>
+        <div>
+          <label>Use in GitHub markdown:</label>
+        </div>
+        <input className="rounded-l" disabled value={markdownLink} />
         <button
+          className="rounded-r"
           onClick={() => {
             navigator.clipboard.writeText(markdownLink);
           }}
         >
-          Copy link to clipboard
+          Copy to clipboard
         </button>
       </div>
     </div>
