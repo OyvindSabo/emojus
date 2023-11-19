@@ -16,7 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header>
+          <h1 className="text-center">Emojus</h1>
+          <p className="text-center">Emojus is singular of emoji, right?</p>
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
