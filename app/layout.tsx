@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -20,6 +21,9 @@ export default function RootLayout({
         <header>
           <h1 className="text-center">Emojus</h1>
           <p className="text-center">Emojus is singular of emoji, right?</p>
+          <p className="text-center">
+            <Link href="https://github.com/OyvindSabo/emojus">GitHub</Link>
+          </p>
         </header>
         <main className="p-4">{children}</main>
       </body>
