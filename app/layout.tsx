@@ -21,7 +21,7 @@ export default function RootLayout({
           <h1 className="text-center">Emojus</h1>
           <p className="text-center">Emojus is singular of emoji, right?</p>
         </header>
-        <main>{children}</main>
+        <main className="p-4">{children}</main>
       </body>
     </html>
   );
