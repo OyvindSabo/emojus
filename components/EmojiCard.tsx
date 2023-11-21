@@ -25,13 +25,15 @@ const EmojiCard = ({ fileName }: EmojiCardProps) => {
   }, [shouldShowToast]);
   return (
     <div className="w-128 rounded border border-solid border-gray-200">
-      <Image
-        className="block mx-auto"
-        src={filePath}
-        alt={emojiName}
-        width={256}
-        height={256}
-      />
+      <div className="bg-gray-100">
+        <Image
+          className="block mx-auto"
+          src={filePath}
+          alt={emojiName}
+          width={256}
+          height={256}
+        />
+      </div>
       <div className="p-4">
         <p className="text-center text-s font-bold">{emojiName}</p>
         <div>
