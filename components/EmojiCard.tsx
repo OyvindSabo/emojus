@@ -5,6 +5,8 @@ import {
   getFilePathFromFileName,
   getMarkdownLinkFromFileName,
 } from '@/utils';
+import Toast from './Toast';
+import { useEffect, useState } from 'react';
 
 type EmojiCardProps = {
   fileName: string;
@@ -14,6 +16,13 @@ const EmojiCard = ({ fileName }: EmojiCardProps) => {
   const filePath = getFilePathFromFileName(fileName);
   const emojiName = getEmojiNameFromFileName(fileName);
   const markdownLink = getMarkdownLinkFromFileName(fileName);
+  const [shouldShowToast, setShouldShowToast] = useState(false);
+  useEffect(() => {
+    if (!shouldShowToast) return;
+    setTimeout(() => {
+      setShouldShowToast(false);
+    }, 2000);
+  }, [shouldShowToast]);
   return (
     <div className="w-128 rounded border border-solid border-gray-200">
       <Image
@@ -33,10 +42,12 @@ const EmojiCard = ({ fileName }: EmojiCardProps) => {
           className="rounded-r"
           onClick={() => {
             navigator.clipboard.writeText(markdownLink);
+            setShouldShowToast(true);
           }}
         >
           Copy to clipboard
         </button>
+        {shouldShowToast && <Toast>Copied to clipboard</Toast>}
       </div>
     </div>
   );
