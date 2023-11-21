@@ -26,7 +26,7 @@ const EmojiCard = ({ fileName }: EmojiCardProps) => {
   return (
     <div className="w-128 rounded border border-solid border-gray-200">
       <Image
-        className="mx-auto"
+        className="block mx-auto"
         src={filePath}
         alt={emojiName}
         width={256}
