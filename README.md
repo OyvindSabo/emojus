@@ -2,6 +2,12 @@
 
 Emojus is singular of emoji, right?
 
+Ever wanted to enrich your GitHub comments with some less generic emoji?
+https://emojus.com is a website which exposes special emoji for the emoji
+connoisseur to whom only the best emoji are good enough. To use an emoji in a
+GitHub comment simply find an emoji on http://emojus.com that you like and copy
+the code for that emoji into your comment.
+
 ## Getting Started
 
 First, run the development server:
