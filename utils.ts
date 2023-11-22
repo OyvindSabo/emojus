@@ -7,7 +7,7 @@ export const getEmojiNameFromFileName = (fileName: string) => {
 };
 
 export const getAbsoluteImagePathFromFileName = (fileName: string) => {
-  return `https://emojus.com/public/emoji/${fileName}`;
+  return `https://emojus.com/emoji/${fileName}`;
 };
 
 export const getMarkdownLinkFromFileName = (fileName: string) => {
