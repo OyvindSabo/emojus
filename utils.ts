@@ -13,5 +13,5 @@ export const getAbsoluteImagePathFromFileName = (fileName: string) => {
 export const getMarkdownLinkFromFileName = (fileName: string) => {
   const emojiName = getEmojiNameFromFileName(fileName);
   const absoluteImagePath = getAbsoluteImagePathFromFileName(fileName);
-  return `<img src="${absoluteImagePath}" alt=${emojiName} height=14 />`;
+  return `<img align="top" src="${absoluteImagePath}" alt="${emojiName}" height="18" />`;
 };
