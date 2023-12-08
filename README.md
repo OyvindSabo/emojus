@@ -8,7 +8,17 @@ connoisseur to whom only the best emoji are good enough. To use an emojus in a
 GitHub comment simply find an emojus on http://emojus.com that you like and copy
 the code for that emojus into your comment.
 
-## Getting Started
+## How to add new emoji
+
+Simply put a .png or .gif image into the public/emoji folder and create a PR for it.
+
+## Emoji style guide
+
+- The image should be 512px x 512px.
+- For visual consistency I recommend using 10px line thickness in illustrations.
+- It should be possible to identify what the image is displaying when rendered in 18px x 18px.
+
+## Run emojus.com locally
 
 First, run the development server:
 
@@ -17,10 +27,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## How to add new emoji
-
-Simply put a .png image into the public/emoji folder and create a PR for it.
 
 ## How to deploy
 
