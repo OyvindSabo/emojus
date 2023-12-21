@@ -12,11 +12,21 @@ the code for that emojus into your comment.
 
 Simply put a .png or .gif image into the public/emoji folder and create a PR for it.
 
-## Emoji style guide
+## How to add new sticker
+
+Simply put a .jpg, .png or .gif image into the public/stickers folder and create a PR for it.
+
+## Emojus style guide
 
 - The image should be 512px x 512px.
 - For visual consistency I recommend using 10px line thickness in illustrations.
 - It should be possible to identify what the image is displaying when rendered in 18px x 18px.
+- The file name should be written in kebab-case and not be misleading.
+
+## Sticker style guide
+
+- The image should be 1024px x 1024px.
+- The file name should be written in kebab-case and not be misleading.
 
 ## Run emojus.com locally
 
