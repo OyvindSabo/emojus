@@ -41,16 +41,18 @@ const EmojiCard = ({ fileName, assetType }: EmojiCardProps) => {
         <div>
           <label>Use in GitHub markdown:</label>
         </div>
-        <input className="rounded-l" disabled value={markdownLink} />
-        <button
-          className="rounded-r"
-          onClick={() => {
-            navigator.clipboard.writeText(markdownLink);
-            setShouldShowToast(true);
-          }}
-        >
-          Copy to clipboard
-        </button>
+        <div className="flex">
+          <input className="grow rounded-l" disabled value={markdownLink} />
+          <button
+            className="rounded-r"
+            onClick={() => {
+              navigator.clipboard.writeText(markdownLink);
+              setShouldShowToast(true);
+            }}
+          >
+            Copy to clipboard
+          </button>
+        </div>
         {shouldShowToast && <Toast>Copied to clipboard</Toast>}
       </div>
     </div>
