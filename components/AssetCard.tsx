@@ -1,21 +1,23 @@
 'use client';
 import Image from 'next/image';
 import {
-  getEmojiNameFromFileName,
+  getAssetNameFromFileName,
   getFilePathFromFileName,
   getMarkdownLinkFromFileName,
 } from '@/utils';
 import Toast from './Toast';
 import { useEffect, useState } from 'react';
+import { AssetType } from '@/types';
 
 type EmojiCardProps = {
   fileName: string;
+  assetType: AssetType;
 };
 
-const EmojiCard = ({ fileName }: EmojiCardProps) => {
-  const filePath = getFilePathFromFileName(fileName);
-  const emojiName = getEmojiNameFromFileName(fileName);
-  const markdownLink = getMarkdownLinkFromFileName(fileName);
+const EmojiCard = ({ fileName, assetType }: EmojiCardProps) => {
+  const filePath = getFilePathFromFileName(fileName, assetType);
+  const emojiName = getAssetNameFromFileName(fileName);
+  const markdownLink = getMarkdownLinkFromFileName(fileName, assetType);
   const [shouldShowToast, setShouldShowToast] = useState(false);
   useEffect(() => {
     if (!shouldShowToast) return;
@@ -24,14 +26,14 @@ const EmojiCard = ({ fileName }: EmojiCardProps) => {
     }, 2000);
   }, [shouldShowToast]);
   return (
-    <div className="w-128 rounded border border-solid border-gray-200">
+    <div className="w-[384px] rounded border border-solid border-gray-200">
       <div className="bg-gray-100">
         <Image
           className="block mx-auto"
           src={filePath}
           alt={emojiName}
-          width={256}
-          height={256}
+          width={assetType === 'emojus' ? 256 : 384}
+          height={assetType === 'emojus' ? 256 : 384}
         />
       </div>
       <div className="p-4">

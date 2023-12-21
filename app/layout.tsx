@@ -22,7 +22,10 @@ export default function RootLayout({
           <h1 className="text-center">Emojus</h1>
           <p className="text-center">Emojus is singular of emoji, right?</p>
           <p className="text-center">
-            <Link href="https://github.com/OyvindSabo/emojus">GitHub</Link>
+            On this site you can find <Link href="/">emoji</Link> and{' '}
+            <Link href="/stickers">stickers</Link> you can use in{' '}
+            <Link href="https://github.com/OyvindSabo/emojus">GitHub</Link>{' '}
+            markdown.
           </p>
         </header>
         <main className="p-4">{children}</main>

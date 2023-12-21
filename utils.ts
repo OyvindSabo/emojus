@@ -1,17 +1,36 @@
-export const getFilePathFromFileName = (fileName: string) => {
-  return `/emoji/${fileName}`;
+import { AssetType } from './types';
+
+export const getFilePathFromFileName = (
+  fileName: string,
+  assetType: AssetType
+) => {
+  return assetType === 'emojus'
+    ? `/emoji/${fileName}`
+    : `/stickers/${fileName}`;
 };
 
-export const getEmojiNameFromFileName = (fileName: string) => {
+export const getAssetNameFromFileName = (fileName: string) => {
   return fileName.split('.')[0];
 };
 
-export const getAbsoluteImagePathFromFileName = (fileName: string) => {
-  return `https://emojus.com/emoji/${fileName}`;
+export const getAbsoluteImagePathFromFileName = (
+  fileName: string,
+  assetType: AssetType
+) => {
+  return assetType === 'emojus'
+    ? `https://emojus.com/emoji/${fileName}`
+    : `https://emojus.com/stickers/${fileName}`;
 };
 
-export const getMarkdownLinkFromFileName = (fileName: string) => {
-  const emojiName = getEmojiNameFromFileName(fileName);
-  const absoluteImagePath = getAbsoluteImagePathFromFileName(fileName);
-  return `<img align="top" src="${absoluteImagePath}" alt="${emojiName}" height="18" />`;
+export const getMarkdownLinkFromFileName = (
+  fileName: string,
+  assetType: AssetType
+) => {
+  const emojiName = getAssetNameFromFileName(fileName);
+  const absoluteImagePath = getAbsoluteImagePathFromFileName(
+    fileName,
+    assetType
+  );
+  const height = assetType === 'emojus' ? 18 : 256;
+  return `<img align="top" src="${absoluteImagePath}" alt="${emojiName}" height="${height}" />`;
 };
