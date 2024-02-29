@@ -26,9 +26,10 @@ const EmojiCard = ({ fileName, assetType }: EmojiCardProps) => {
     }, 2000);
   }, [shouldShowToast]);
   return (
-    <div className="w-[384px] rounded border border-solid border-gray-200 overflow-hidden">
+    <div className="w-[384px] rounded border border-solid border-gray-200 overflow-hiddpen">
       <div className="bg-gray-100">
         <Image
+          unoptimized
           className="block mx-auto"
           src={filePath}
           alt={emojiName}
